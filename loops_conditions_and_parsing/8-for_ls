@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Lists files without the numeric prefix
+
+for file in *
+do
+  echo "$file" | cut -d- -f2-
+done
+

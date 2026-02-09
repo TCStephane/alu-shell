@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Displays superstitious messages using case
 
 i=1
 while [ "$i" -le 20 ]
@@ -13,3 +14,4 @@ do
 
   i=$((i + 1))
 done
+

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Groups and counts IP addresses and HTTP status codes
+
+awk '{ count[$1 " " $9]++ }
+END {
+  for (item in count)
+    print count[item], item
+}' apache-access.log | sort -nr
+
