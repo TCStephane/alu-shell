@@ -5,9 +5,9 @@ PIDFILE="/var/run/myscript.pid"
 
 echo $$ > "$PIDFILE"
 
-trap "echo Y U no love me?!" SIGINT
-trap "echo I hate the kill command" SIGTERM
-trap "rm -f $PIDFILE; exit" SIGQUIT SIGTERM
+trap echo "Y U no love me?!" SIGINT
+trap echo "I hate the kill command" SIGTERM
+trap 'rm -f $PIDFILE; exit' SIGQUIT SIGTERM
 
 while true
 do
