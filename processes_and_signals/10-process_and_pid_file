@@ -2,7 +2,7 @@
 # Creates PID file and handles multiple signals
 
 
-echo $$ > /var/run/myscript.pid
+echo $$ >> /var/run/myscript.pid
 
 trap "echo 'Y U no love me?!'" SIGINT
 trap "echo 'I hate the kill command'" SIGTERM
