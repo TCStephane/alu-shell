@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 # Creates PID file and handles multiple signals
 
-PIDFILE="/var/run/myscript.pid"
 
-echo $$ > "$PIDFILE"
+echo $$ > /var/run/myscript.pid
 
 trap "echo 'Y U no love me?!'" SIGINT
 trap "echo 'I hate the kill command'" SIGTERM
-trap 'rm -rf $PIDFILE; exit' SIGQUIT	
+trap 'rm -rf /var/run/myscript.pid; exit' SIGQUIT	
 
 while true
 do
