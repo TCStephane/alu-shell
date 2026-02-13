@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Creates PID file and handles multiple signals
+
+PIDFILE="/var/run/myscript.pid"
+
+echo $$ > "$PIDFILE"
+
+trap "echo Y U no love me?!" SIGINT
+trap "echo I hate the kill command" SIGTERM
+trap "rm -f $PIDFILE; exit" SIGQUIT SIGTERM
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
+
